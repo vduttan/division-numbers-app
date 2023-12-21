@@ -7,17 +7,17 @@
         <input
           formControlName="input1"
           numbersOnly
-          [ngClass]="{ 'input-error': calculaterForm.get('input1')?.['touched'] && calculaterForm.get('input1')?.invalid }"
+          [ngClass]="{ 'input-error': calculaterForm.get('input1')?.['dirty'] && calculaterForm.get('input1')?.invalid }"
         />
         <p
           class="error-block"
-          *ngIf=" calculaterForm.get('input1')?.['touched'] &&  calculaterForm.get('input1')?.errors?.['required']"
+          *ngIf=" calculaterForm.get('input1')?.['dirty'] &&  calculaterForm.get('input1')?.errors?.['required']"
         >
           Dividend field is required.
         </p>
         <p
           class="error-block"
-          *ngIf=" calculaterForm.get('input1')?.['touched'] && calculaterForm.get('input1')?.errors?.['pattern']"
+          *ngIf=" calculaterForm.get('input1')?.['dirty'] && calculaterForm.get('input1')?.errors?.['pattern']"
         >
           Invalid dividend. Only valid numbers please..
         </p>
@@ -27,17 +27,17 @@
         <input
           formControlName="input2"
           numbersOnly
-          [ngClass]="{ 'input-error': calculaterForm.get('input2')?.['touched'] && calculaterForm.get('input2')?.invalid }"
+          [ngClass]="{ 'input-error': calculaterForm.get('input2')?.['dirty'] && calculaterForm.get('input2')?.invalid }"
         />
         <p
           class="error-block"
-          *ngIf=" calculaterForm.get('input2')?.['touched'] &&  calculaterForm.get('input2')?.errors?.['required']"
+          *ngIf=" calculaterForm.get('input2')?.['dirty'] &&  calculaterForm.get('input2')?.errors?.['required']"
         >
           Divisor field is required.
         </p>
         <p
           class="error-block"
-          *ngIf=" calculaterForm.get('input2')?.['touched'] && calculaterForm.get('input2')?.errors?.['pattern']"
+          *ngIf=" calculaterForm.get('input2')?.['dirty'] && calculaterForm.get('input2')?.errors?.['pattern']"
         >
           Invalid divisor. Only valid numbers please..
         </p>
