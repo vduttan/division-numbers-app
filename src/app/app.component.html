@@ -1,0 +1,52 @@
+<router-outlet></router-outlet>
+
+<div class="calc-wrapper">
+  <form [formGroup]="calculaterForm">
+    <div class="left-col">
+      <div class="input-block">
+        <input
+          formControlName="input1"
+          numbersOnly
+          [ngClass]="{ 'input-error': calculaterForm.get('input1')?.['touched'] && calculaterForm.get('input1')?.invalid }"
+        />
+        <p
+          class="error-block"
+          *ngIf=" calculaterForm.get('input1')?.['touched'] &&  calculaterForm.get('input1')?.errors?.['required']"
+        >
+          Dividend field is required.
+        </p>
+        <p
+          class="error-block"
+          *ngIf=" calculaterForm.get('input1')?.['touched'] && calculaterForm.get('input1')?.errors?.['pattern']"
+        >
+          Invalid dividend. Only valid numbers please..
+        </p>
+      </div>
+
+      <div class="input-block">
+        <input
+          formControlName="input2"
+          numbersOnly
+          [ngClass]="{ 'input-error': calculaterForm.get('input2')?.['touched'] && calculaterForm.get('input2')?.invalid }"
+        />
+        <p
+          class="error-block"
+          *ngIf=" calculaterForm.get('input2')?.['touched'] &&  calculaterForm.get('input2')?.errors?.['required']"
+        >
+          Divisor field is required.
+        </p>
+        <p
+          class="error-block"
+          *ngIf=" calculaterForm.get('input2')?.['touched'] && calculaterForm.get('input2')?.errors?.['pattern']"
+        >
+          Invalid divisor. Only valid numbers please..
+        </p>
+        <!-- (input)="sendInput2($event)" /> -->
+      </div>
+    </div>
+    <div class="right-col">
+      <p>=</p>
+      <p class="calc-output">{{ answer }}</p>
+    </div>
+  </form>
+</div>
